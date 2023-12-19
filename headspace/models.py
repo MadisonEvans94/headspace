@@ -18,7 +18,11 @@ def validate_embedding_vector(value):
 
 
 class HeadSpace(models.Model):
+    name = models.TextField(max_length=100, null=True)
     settings = models.JSONField()
+
+    def __str__(self):
+        return self.name
 
 
 class Cluster(models.Model):
@@ -29,6 +33,9 @@ class Cluster(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Thought(models.Model):
     headspace = models.ForeignKey(HeadSpace, on_delete=models.CASCADE)
@@ -38,3 +45,6 @@ class Thought(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     embedding_vector = models.JSONField(
         validators=[validate_embedding_vector])
+
+    def __str__(self):
+        return f"Thought ID: {self.id}"
