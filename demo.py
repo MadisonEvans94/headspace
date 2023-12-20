@@ -4,6 +4,7 @@ import torch
 from transformers import AutoModel, AutoTokenizer
 from sklearn.manifold import TSNE
 import os
+from dimensionality_reducer import DimensionalityReducer
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -56,8 +57,10 @@ embeddings_np = torch.stack(
     embedding_average).detach().numpy()
 
 
-tsne = TSNE(n_components=2, perplexity=3, learning_rate=200)
-reduced_embeddings = tsne.fit_transform(embeddings_np)
+tsne = DimensionalityReducer.create_reducer(
+    "tsne", perplexity=3, learning_rate=200)
+
+reduced_embeddings = tsne.reduce_dimensions(embeddings_np)
 
 
 # 2D Visualization
