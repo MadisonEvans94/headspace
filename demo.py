@@ -33,7 +33,28 @@ sample_text = [
     "Biodiversity is key to a resilient natural environment.",
     "Protecting natural habitats is critical for preserving biodiversity.",
     "The Amazon rainforest is home to a myriad of species.",
-    "Renewable resources like wind and solar power are key to a clean energy future."
+    "Renewable resources like wind and solar power are key to a clean energy future.",
+    "Personalized medicine is tailoring treatments to individual genetic profiles.",
+    "Wearable technology is monitoring patient health metrics in real-time.",
+    "3D printing is revolutionizing the creation of custom prosthetics.",
+    "Telemedicine enables remote diagnosis and treatment, expanding healthcare access.",
+    "Artificial organs are emerging as a potential solution for transplant shortages.",
+    "Gene editing techniques like CRISPR are opening doors to curing genetic diseases.",
+    "Nanotechnology in drug delivery improves the precision of chemotherapy.",
+    "Virtual reality is being used for pain management and therapy.",
+    "Machine learning is enhancing diagnostic accuracy in radiology and pathology.",
+    "Bioprinting of tissues and organs is advancing regenerative medicine.",
+    "Rovers continue to unveil the mysteries of Mars' surface composition.",
+    "The James Webb Telescope will peer into the origins of the universe.",
+    "Private space companies are accelerating the development of space tourism.",
+    "Satellite megaconstellations are promising global high-speed internet coverage.",
+    "Space habitats are being designed for long-term human residence off Earth.",
+    "Asteroid mining could provide resources for on-Earth and space-based projects.",
+    "The search for extraterrestrial life is focusing on exoplanet atmospheres.",
+    "Quantum communication in space may lead to unhackable information transfer.",
+    "Artificial intelligence is crucial in handling vast amounts of astronomical data.",
+    "God is great"
+
 ]
 
 
