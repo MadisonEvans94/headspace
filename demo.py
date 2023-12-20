@@ -11,16 +11,30 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 model_name = "distilbert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
+
 sample_text = [
-    "Restoring natural habitats helps maintain ecological balance.",
-    "Restoring natural habitats helps maintain earth balance.",
-    "Restoring natural habitats helps maintain water balance.",
-    "Restoring natural habitats helps maintain heat balance.",
-    "asdf ass gdasga.",
-    "asd fass gdasga.",
-    "asdf assgda sga.",
-    "asdf   assgdasga.",
+    "Artificial intelligence is transforming our lives in profound ways.",
+    "The development of self-driving cars marks a revolution in transportation.",
+    "Quantum computing has the potential to solve complex problems.",
+    "Blockchain technology is reshaping financial transactions and data security.",
+    "Virtual reality offers new dimensions for gaming and education.",
+    "The rise of 5G networks is accelerating mobile communication capabilities.",
+    "Robotic automation is changing manufacturing processes.",
+    "The Internet of Things connects everyday devices to the internet.",
+    "Machine learning algorithms are becoming more sophisticated at data analysis.",
+    "Renewable energy technologies are crucial for sustainable future.",
+    "Forests play a vital role in maintaining Earth's ecosystem.",
+    "Conservation efforts are essential to protect endangered wildlife.",
+    "The beauty of the ocean is vast but vulnerable to pollution.",
+    "Climate change is a significant challenge for global sustainability.",
+    "Urban green spaces are important for environmental balance.",
+    "Sustainable agriculture practices contribute to food security.",
+    "Biodiversity is key to a resilient natural environment.",
+    "Protecting natural habitats is critical for preserving biodiversity.",
+    "The Amazon rainforest is home to a myriad of species.",
+    "Renewable resources like wind and solar power are key to a clean energy future."
 ]
+
 
 inputs = [tokenizer(text, return_tensors="pt",
                     truncation=True, max_length=512) for text in sample_text]
@@ -41,8 +55,8 @@ embedding_average = [torch.mean(embedding.squeeze(), dim=0)
 embeddings_np = torch.stack(
     embedding_average).detach().numpy()
 
-# Adjust perplexity to be less than the number of samples
-tsne = TSNE(n_components=2, perplexity=5)
+
+tsne = TSNE(n_components=2, perplexity=3, learning_rate=200)
 reduced_embeddings = tsne.fit_transform(embeddings_np)
 
 
